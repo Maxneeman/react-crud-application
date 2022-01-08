@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 import { Table } from 'semantic-ui-react'
 export default function Read() {
+    useEffect(() => {
+       
+    }, [])
     return (
         <div>
             <Table singleLine>
