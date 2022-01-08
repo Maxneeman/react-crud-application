@@ -20,11 +20,14 @@ export default function Read() {
                 </Table.Header>
 
                 <Table.Body>
-                    <Table.Row>
-                        <Table.Cell>Maxneeman</Table.Cell>
-                        <Table.Cell>Ng'unda</Table.Cell>
-                        <Table.Cell>Yes</Table.Cell>
-                    </Table.Row>
+                    {APIData.map((data) => {
+                        return (
+                        <Table.Row>
+                            <Table.Cell>{data.firstName}</Table.Cell>
+                            <Table.Cell>{data.lastName}</Table.Cell>
+                            <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
+                            </Table.Row>
+                    )})}
                 </Table.Body>
             </Table>
         </div>
