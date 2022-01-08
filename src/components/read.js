@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Table } from 'semantic-ui-react'
 export default function Read() {
+    const [APIData, setAPIData] = useState([]);
     useEffect(() => {
        
     }, [])
