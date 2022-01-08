@@ -4,13 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="main">
-
-      <h1 className="main-header">React Crud Operations</h1>  
-      <div>
-        <Create/>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route >
+          <Route index element={<Create />} />
+          {/* <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
