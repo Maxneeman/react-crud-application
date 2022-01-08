@@ -15,6 +15,14 @@ export default function Update() {
         setCheckbox(localStorage.getItem('Checkbox Value'))
 }, []);
 
+const updateAPIData = () => {
+    axios.put(`https://61d6ef0235f71e0017c2e8f7.mockapi.io/fakeData/${id}`, {
+        firstName,
+         lastName,
+         checkbox
+	})
+}
+
     return (
         <div>
             <Form className="create-form">
@@ -29,7 +37,7 @@ export default function Update() {
                 <Form.Field>
                     <Checkbox label='I agree to the Terms and Conditions' checked={checkbox} onChange={(e) => setCheckbox(!checkbox)}/>
                 </Form.Field>
-                <Button type='submit'>Update</Button>
+                <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>
         </div>
     )
