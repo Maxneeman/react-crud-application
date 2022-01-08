@@ -18,6 +18,10 @@ export default function Read() {
         localStorage.setItem('Last Name', lastName);
         localStorage.setItem('Checkbox Value', checkbox)
      }
+
+     const onDelete = (id) => {
+        axios.delete(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData/${id}`)
+      }
     return (
         <div>
             <Table singleLine>
