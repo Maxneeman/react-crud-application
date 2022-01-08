@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Table } from 'semantic-ui-react'
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
@@ -16,6 +18,7 @@ export default function Read() {
                         <Table.HeaderCell>First Name</Table.HeaderCell>
                         <Table.HeaderCell>Last Name</Table.HeaderCell>
                         <Table.HeaderCell>Checked</Table.HeaderCell>
+                        <Table.HeaderCell>Update</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -26,7 +29,12 @@ export default function Read() {
                             <Table.Cell>{data.firstName}</Table.Cell>
                             <Table.Cell>{data.lastName}</Table.Cell>
                             <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
-                            </Table.Row>
+                            <Link to='/update'>
+                                <Table.Cell> 
+                                    <Button>Update</Button>
+                                </Table.Cell>
+                            </Link>
+                        </Table.Row>
                     )})}
                 </Table.Body>
             </Table>
