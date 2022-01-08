@@ -3,7 +3,10 @@ import { Table } from 'semantic-ui-react'
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-       
+        axios.get(`https://61d6ef0235f71e0017c2e8f7.mockapi.io/fakeData`)
+        .then((response) => {
+            setAPIData(response.data);
+        })
     }, [])
     return (
         <div>
