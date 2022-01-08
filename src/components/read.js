@@ -19,9 +19,19 @@ export default function Read() {
         localStorage.setItem('Checkbox Value', checkbox)
      }
 
+     const getData = () => {
+        axios.get(`https://61d6ef0235f71e0017c2e8f7.mockapi.io/fakeData`)
+            .then((getData) => {
+                 setAPIData(getData.data);
+             })
+    }
+
      const onDelete = (id) => {
-        axios.delete(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData/${id}`)
-      }
+        axios.delete(`https://61d6ef0235f71e0017c2e8f7.mockapi.io/fakeData/${id}`)
+     .then(() => {
+        getData();
+    })
+}
     return (
         <div>
             <Table singleLine>
