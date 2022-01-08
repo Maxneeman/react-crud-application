@@ -1,8 +1,9 @@
 import React from 'react'
+import './App.css'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 const Create = () => (
-    <Form>
+    <Form className="create-form">
         <Form.Field>
             <label>First Name</label>
             <input placeholder='First Name' />
