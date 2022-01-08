@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="main">
 
-          Learn React
+      <h1 className="main-header">React Crud Operations</h1>  
  
     </div>
   );
