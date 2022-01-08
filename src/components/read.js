@@ -42,6 +42,9 @@ export default function Read() {
                                     <Button onClick={() => setData()}>Update</Button>
                                 </Table.Cell>
                             </Link>
+                            <Table.Cell>
+                              <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                            </Table.Cell>
                         </Table.Row>
                     )})}
                 </Table.Body>
