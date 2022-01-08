@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Table } from 'semantic-ui-react'
+import { Table, Button } from 'semantic-ui-react'
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
@@ -10,6 +10,10 @@ export default function Read() {
             setAPIData(response.data);
         })
     }, [])
+
+    const setData = (data) => {
+        console.log(data);
+     }
     return (
         <div>
             <Table singleLine>
@@ -31,7 +35,7 @@ export default function Read() {
                             <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
                             <Link to='/update'>
                                 <Table.Cell> 
-                                    <Button>Update</Button>
+                                    <Button onClick={() => setData()}>Update</Button>
                                 </Table.Cell>
                             </Link>
                         </Table.Row>
